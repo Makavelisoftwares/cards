@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+</head>
+<style>
+    body{
+        background-color: rgb(186, 217, 252);
+        font-family: sans-serif;
+    }
+    .cards{
+        max-width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .card{
+        width: 300px;
+        padding: 5px;
+        box-shadow: 1px 1px 2px #d0d0d0;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+    }
+    .section1,
+    .section2{
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: black;
+    }
+    .names{
+        padding: 0 10px;
+        line-height: 1px;
+        font-size: 13px;
+    }
+    .names p{
+        font-weight: 100;
+        color: #888888;
+    }
+    .link a,
+    .section2 a{
+        text-decoration: none;
+        font-weight: 700;
+        color: rgb(4, 125, 245);
+    }
+    .section2 p{
+        color: #4f4e4e;
+        line-height: 18px;
+        font-size: 14px;
+        word-spacing: 3px;
+    }
+    .section3{
+        width: 100%;
+        height: 40vh;
+        background-color: black;
+        cursor: pointer;
+    }
+
+@media (max-width:1000px) {
+    .cards{
+        width: 100%;
+        flex-direction: column;
+    }
+    .card{
+        width: 90%;
+    }
+    
+}
+</style>
+<body>
+    <div class="cards">
+
+    </div>
+
+    <script>
+        const cards=document.querySelector('.cards');
+        const words=[
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"sarah joshua",time:1},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"watson waswa",time:2},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"omar maulid",time:4},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"stanley ndoro",time:5},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"victor mutuku",time:2},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"valentine ",time:4},
+            {paragraph:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsam sint officiis quae est optio voluptas doloribus reprehenderit itaque ullam nam repellendus natus nulla aliquid necessitatibus repudiandae quis soluta fugit.",name:"collins mutua",time:3}
+        ]     
+        words.map(word=>{
+            let template='';
+            template=`
+            <div class="card">
+                <div class="section1">
+                <div class="profile">
+                    <div class="logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="names">
+                        <h3>${word.name}</h3>
+                        <p>${word.time} hrs ago</p>
+                    </div>
+                </div>
+                <div class="link">
+                    <a href="#">view profile</a>
+                </div>
+                </div>
+                <div class="section2">
+                    <p class = "content">${word.paragraph.slice(0,190)} <a href="#">see more...</a></p>
+                </div>
+                <div class="section3">
+                <img src="" alt="">
+                </div>
+            </div>  
+
+            `
+            cards.innerHTML+=template;
+        })
+
+
+    </script>
+</body>
+</html>
