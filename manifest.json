@@ -21,7 +21,7 @@
     ],
     "theme_color":"#ffffff",
     "background_color":"#ffffff",
-    // "start_url":"https://makavelicards.netlify.app/",
+    "start_url":"https://makavelicards.netlify.app/",
     "display":"standalone",
     "orientation":"potrait"
 }
